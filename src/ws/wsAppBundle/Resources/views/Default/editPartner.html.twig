@@ -1,0 +1,109 @@
+{# src/ws/wsAppBundle/Resources/Default/views/editPartner.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}WIRSPARER WEB-APP{% endblock %}
+
+{% block body %}
+    <div class="row clearfix">
+        <div class="col-md-12 text-center">
+            <h3>WIRSPARER BEARBEITEN</h3>
+            <p>Lorem ipsum</p>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+        </div>
+        <div class="col-md-4 column">
+            {{ form_start(form) }}
+                {{ form_errors(form) }}
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <label class="control-label">INTERNE ID</label>
+                        {{ form_widget(form.id, {'attr': {'class': 'form-control', 'placeholder': 'Interne ID des Partners'}}) }}
+                        {{ form_errors(form.id) }}
+                    </div>
+                    <div class="col-xs-6">
+                        <label class="control-label">NLFY ID</label>
+                        {{ form_widget(form.nlId, {'attr': {'class': 'form-control', 'placeholder': 'NLFY ID des Partners'}}) }}
+                        {{ form_errors(form.nlId) }}
+                    </div>
+                    <div class="col-xs-6">
+                        <label class="control-label">NLFY ID DARÜBER</label>
+                        {{ form_widget(form.nlIdOver, {'attr': {'class': 'form-control', 'placeholder': 'ID des Partners direkt darüber'}}) }}
+                        {{ form_errors(form.nlIdOver) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <label class="control-label">Nickname</label>
+                        {{ form_widget(form.nick, {'attr': {'class': 'form-control', 'placeholder': 'Nickname des Partners'}}) }}
+                        {{ form_errors(form.nick) }}
+                    </div>
+                    <div class="col-xs-6">
+                        <label class="control-label">Email</label>
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Partner-Emailadresse (optional)'}}) }}
+                        {{ form_errors(form.email) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <label class="control-label">Name</label>
+                        {{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder': 'Richtiger Name des Partners'}}) }}
+                        {{ form_errors(form.name) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <label class="control-label">Registrierungsdatum</label>
+                        {{ form_widget(form.regDate, {'attr': {'class': 'form-control', 'placeholder': 'Registrierungsdatum des Partners', 'type': 'date'}}) }}
+                        {{ form_errors(form.regDate) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        <label class="control-label">Spart</label>
+                        {{ form_widget(form.scrimps, {'attr': {'class': 'form-control', 'placeholder': ''}}) }}
+                        {{ form_errors(form.scrimps) }}
+                    </div>
+                    <div class="col-xs-2">
+                        <label class="control-label">L</label>
+                        {{ form_widget(form.qualifiedL, {'attr': {'class': 'form-control', 'placeholder': ''}}) }}
+                        {{ form_errors(form.qualifiedL) }}
+                    </div>
+                    <div class="col-xs-2">
+                        <label class="control-label">R</label>
+                        {{ form_widget(form.qualifiedR, {'attr': {'class': 'form-control', 'placeholder': ''}}) }}
+                        {{ form_errors(form.qualifiedR) }}
+                    </div>
+                    <div class="col-xs-2">
+                        <label class="control-label">Bezahlt</label>
+                        {{ form_widget(form.installment, {'attr': {'class': 'form-control', 'placeholder': ''}}) }}
+                        {{ form_errors(form.installment) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <label class="control-label">Partner-Typ</label>
+                        {{ form_widget(form.type, {'attr': {'class': 'form-control', 'placeholder': ''}}) }}
+                        {{ form_errors(form.type) }}
+                    </div>
+                    <div class="col-xs-6">
+                        <label class="control-label">Ebene</label>
+                        {{ form_widget(form.level, {'attr': {'class': 'form-control', 'placeholder': ''}}) }}
+                        {{ form_errors(form.level) }}
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-default'}}) }}
+                </div>
+            {{ form_end(form) }}
+            <br>
+            {% set parent = form.vars.value.nlIdOver %}
+            
+            {% set nlId = form.vars.value.nlId %}
+            <a href="{{ path('links_create', {'parent': parent, 'nlId': nlId}) }}"><button class="btn btn-default">LINKS ANLEGEN</button></a>
+        </div>
+        <div class="col-md-4 column">
+        </div>
+    </div>
+{% endblock %}

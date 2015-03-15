@@ -1,0 +1,58 @@
+{# app/Resources/views/default/partnerElement.html.twig #}
+
+{% if partner.level is even %}
+    <div class="light row">
+{% else %}
+    <div class="shadow row">    
+{% endif %}
+        
+    <div class="col-md-1 "><span class="pull-left"><small>E{{partner.level}}</small></span></div>
+    <div class="col-md-11 ">
+            {% if partner.installment == 1 %}
+                <button type="button" class="btn btn-success"><a href="/partner/edit/{{partner.id}}">
+            {% elseif partner.type == 'tot' %}
+                <button type="button" class="btn btn-danger"><a href="/partner/edit/{{partner.id}}">       
+            {% else %}
+                <button type="button" class="btn btn-warning"> <a href="/partner/edit/{{partner.id}}">           
+            {% endif %}
+                {{partner.nick}} 
+                    <small>{{ render(controller('wswsAppBundle:Default:countPartnersForId', { 'nlId': partner.nlId })) }}</small>
+                {% if partner.type == 'TP' %}    
+                    <span class="label label-default">TP</span>
+                {% elseif partner.type == 'TPA' %}
+                    <span class="label label-default">TPA</span>
+                {% elseif partner.type == 'JP' %}
+                    <span class="label label-info">JP</span>
+                {% elseif partner.type == 'JPA' %}
+                    <span class="label label-info">JPA</span>
+                {% elseif partner.type == 'SP' %}
+                    <span class="label label-primary">SP</span>
+                {% elseif partner.type == 'SPA' %}
+                    <span class="label label-primary">SPA</span>
+                {% elseif partner.type == 'na' %}
+                    <span class="label label-danger"><span class="glyphicon glyphicon-question-sign"></span></span>
+                {% elseif partner.type == 'tot' %}
+                    <span class="label label-danger"><span class="glyphicon glyphicon-ban-circle"></span></span>
+                {% endif %}    
+                {% if partner.scrimps == 0 %}
+                    <span class="label label-danger">
+                        <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+                    </span>
+                {% else %}
+                    <span class="label label-success">
+                        <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+                    </span>
+                {% endif %}
+                {% if partner.qualifiedL == 0 %}
+                    <span class="label label-danger">L</span>
+                {% else %}
+                    <span class="label label-success">L</span>
+                {% endif %}
+                {% if partner.qualifiedR == 0 %}
+                    <span class="label label-danger">R</span>
+                {% else %}
+                    <span class="label label-success">R</span>
+                {% endif %}
+            <a/></button>
+
+            </div></div>    

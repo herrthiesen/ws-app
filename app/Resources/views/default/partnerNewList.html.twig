@@ -1,0 +1,8 @@
+{# app/Resources/views/default/partnerNewList.html.twig #}
+
+{% for partner in partners %}
+<div class="shadow row">    
+{{ render(controller('wswsAppBundle:Default:echoPartnerElement', {'nlId': partner.child})) }}
+{{partner.child}}
+</div>
+{% endfor %}

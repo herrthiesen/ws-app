@@ -1,0 +1,4 @@
+services:
+#    wsws_app.example:
+#        class: ws\wsAppBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

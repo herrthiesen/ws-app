@@ -1,0 +1,21 @@
+{# src/Becker/WebAppBundle/Resources/Default/views/allPartners.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}WIRSPARER WEB-APP{% endblock %}
+
+{% block body %}
+    <div class="row clearfix">
+        <div class="col-md-12 text-center">
+            <h3>ALLE WIRSPARER</h3>
+        </div>
+    </div>
+    
+    <div class="row clearfix">
+        <div class="col-md-12 text-center">
+            {{ render(controller(
+                    'wswsAppBundle:Default:showAllPartners'
+               )) }} 
+        </div>
+        
+    </div>
+{% endblock %}

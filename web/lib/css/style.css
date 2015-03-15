@@ -1,0 +1,90 @@
+
+
+body
+{
+    padding-top: 70px;
+}
+
+.user_avatar
+{
+    margin: -5px -1px -5px -1px;
+}
+
+.brackets
+{
+    
+    margin-right: 5px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.brackets a
+{
+    color: #fff;
+}
+
+.brackets a:hover
+{
+    color: #fff;
+}
+
+h3
+{
+    background-color: #292929;
+    color: #ffffff;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 34px;
+    font-weight: lighter;
+    text-transform: capitalize;
+    display: inline-table;
+}
+
+.form-control
+{
+    border-radius: 0px;
+}
+
+.btn-default
+{
+    color: #ffffff;
+    background-color: #292929;
+    border-radius: 0px;
+    width: 100%;
+}
+
+.register_hint
+{
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-weight: lighter;
+    font-size: 11px;
+}
+
+.btn-secondary
+{
+    background-color: #d5d5d5;
+}
+
+.logo
+{
+     height: 30px;  
+}
+
+navbar-toggle
+{
+    padding: -5px -1px -5px -1px;
+}
+
+.shadow
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #d5d5d5;
+}
+.light
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+

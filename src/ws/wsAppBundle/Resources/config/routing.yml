@@ -1,0 +1,51 @@
+wsws_app_root:
+    path:     /
+    defaults: { _controller: wswsAppBundle:Default:showAllPartnersList }
+
+wsws_app_homepage:
+    path:     /index/
+    defaults: { _controller: wswsAppBundle:Default:index }
+    
+wsws_app_addPartner:
+    path:       /partner/add/
+    defaults:   { _controller: wswsAppBundle:Default:openAddPartnerForm}
+    
+wsws_app_createPartner:
+    path:       /partner/create/
+    defaults:   { _controller: wswsAppBundle:Default:createPartner}
+
+wsws_app_editPartner:
+    path:       /partner/edit/{id}
+    defaults:   { _controller: wswsAppBundle:Default:openEditPartnerForm}
+
+wsws_app_updatePartner:
+    path:       /partner/update/
+    defaults:   { _controller: wswsAppBundle:Default:updatePartner}
+    
+wsws_app_showAllPartners:
+    path:       /partner/all/
+    defaults:   { _controller: wswsAppBundle:Default:showAllPartnersList}
+
+login:
+    path:     /login
+    defaults: { _controller: wswsAppBundle:Security:login }
+    
+login_check:
+    path:   /login_check
+     
+logout:
+    path:   /logout
+
+account_register:
+    path:     /login/register
+    defaults: { _controller: wswsAppBundle:Account:register }
+
+account_create:
+    path:     /login/register/create
+    defaults: { _controller: wswsAppBundle:Account:create }
+    
+links_create:
+    path:   /partner/createLinks/{parent}-{nlId}
+    defaults: { _controller: wswsAppBundle:Default:createPartnerLinks, parent: null, nlId: null, level: 0 }
+    requirements:
+        _method:  GET   

@@ -1,0 +1,162 @@
+{# app/Resources/views/default/partnerList.html.twig #}
+{% set one = 0 %}
+{% set two = 0 %}
+{% set three = 0 %}
+{% set four = 0 %}
+{% set five = 0 %}
+{% set six = 0 %}
+{% set seven = 0 %}
+{% set eight = 0 %}
+{% set nine = 0 %}
+{% set ten = 0 %}
+{% set eleven = 0 %}
+{% set twelve = 0 %}
+{% set thirteen = 0 %}
+{% set fourteen = 0 %}
+{% set fifteen = 0 %}
+<div class="light row">
+    <div class="col-md-1 "></div>
+    <div class="col-md-11 ">
+        {% for partner in partners %}
+            {% if partner.level == 1 %}
+                {% set one = one + 1 %}
+                </div></div>    
+                <div class="shadow row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E1 P{{one}}/2</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 2 %}
+                {% set two = two+ 1 %}
+                </div></div>
+                <div class="light row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E2 P{{two}}/4</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 3 %}
+                {% set three = three+ 1 %}
+                </div></div>
+                <div class="shadow row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E3 P{{three}}/8</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 4 %}
+                {% set four = four+ 1 %}
+                </div></div>
+                <div class="light row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E4 P{{four}}/16</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 5 %}
+                {% set five = five+ 1 %}
+                </div></div>
+                <div class="shadow row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E5 P{{five}}/32</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 6 %}
+                {% set six = six+ 1 %}
+                </div></div>
+                <div class="light row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E6 P{{six}}/64</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 7 %}
+                {% set seven = seven + 1 %}
+                </div></div>
+                <div class="shadow row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E7 P{{seven}}/128</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 8 %}
+                {% set eight = eight + 1 %}
+                </div></div>
+                <div class="light row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E8 P{{eight}}/256</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 9 %}
+                {% set nine = nine + 1 %}
+                </div></div>
+                <div class="shadow row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E9 P{{nine}}/512</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 10 %}
+                {% set ten = ten + 1 %}
+                </div></div>
+                <div class="light row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E10 P{{ten}}/1024</small></span></div>
+                    <div class="col-md-11 ">             
+            {% elseif partner.level == 11 %}
+                {% set eleven = eleven + 1 %}
+                </div></div>
+                <div class="shadow row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E11 P{{eleven}}/2028</small></span></div>
+                    <div class="col-md-11 ">         
+            {% elseif partner.level == 12 %}
+                {% set twelve = twelve + 1 %}
+                </div></div>
+                <div class="light row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E12 P{{twelve}}/4056</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 13 %}
+                {% set thirteen = thirteen + 1 %}
+                </div></div>
+                <div class="shadow row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E13 P{{thirteen}}/8112</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 14 %}
+                {% set fourteen = fourteen + 1 %}
+                </div></div>
+                <div class="light row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E14 P{{fourteen}}/16224</small></span></div>
+                    <div class="col-md-11 "> 
+            {% elseif partner.level == 15 %}
+                {% set fifteen = fifteen + 1 %}
+                </div></div>
+                <div class="shadow row">
+                    <div class="col-md-1 "><span class="pull-left"><small>E15 P{{fifteen}}/32448</small></span></div>
+                    <div class="col-md-11 "> 
+            {% endif %}
+                        
+                        
+            {% if partner.installment == 1 %}
+                <button type="button" class="btn btn-success"><a href="/partner/edit/{{partner.id}}">
+            {% elseif partner.type == 'tot' %}
+                <button type="button" class="btn btn-danger"><a href="/partner/edit/{{partner.id}}">       
+            {% else %}
+                <button type="button" class="btn btn-warning"> <a href="/partner/edit/{{partner.id}}">           
+            {% endif %}
+                {{partner.nick}} 
+                    <small>{{ render(controller('wswsAppBundle:Default:countPartnersForId', { 'nlId': partner.nlId })) }}</small>
+                {% if partner.type == 'TP' %}    
+                    <span class="label label-default">TP</span>
+                {% elseif partner.type == 'TPA' %}
+                    <span class="label label-default">TPA</span>
+                {% elseif partner.type == 'JP' %}
+                    <span class="label label-info">JP</span>
+                {% elseif partner.type == 'JPA' %}
+                    <span class="label label-info">JPA</span>
+                {% elseif partner.type == 'SP' %}
+                    <span class="label label-primary">SP</span>
+                {% elseif partner.type == 'SPA' %}
+                    <span class="label label-primary">SPA</span>
+                {% elseif partner.type == 'na' %}
+                    <span class="label label-danger"><span class="glyphicon glyphicon-question-sign"></span></span>
+                {% elseif partner.type == 'tot' %}
+                    <span class="label label-danger"><span class="glyphicon glyphicon-ban-circle"></span></span>
+                {% endif %}    
+                {% if partner.scrimps == 0 %}
+                    <span class="label label-danger">
+                        <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+                    </span>
+                {% else %}
+                    <span class="label label-success">
+                        <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+                    </span>
+                {% endif %}
+                {% if partner.qualifiedL == 0 %}
+                    <span class="label label-danger">L</span>
+                {% else %}
+                    <span class="label label-success">L</span>
+                {% endif %}
+                {% if partner.qualifiedR == 0 %}
+                    <span class="label label-danger">R</span>
+                {% else %}
+                    <span class="label label-success">R</span>
+                {% endif %}
+            <a/></button>
+
+        {% endfor %}
+            </div></div>    
